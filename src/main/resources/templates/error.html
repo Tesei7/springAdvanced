@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Spring Security Example</title>
+</head>
+<body>
+<h1>Error! You have no access to view this page</h1>
+
+<div th:text="${#authentication.name}">
+    The value of the "name" property of the authentication object should appear here.
+</div>
+
+<p>Click <a th:href="@{/home}">here</a> to see a home page.</p>
+</body>
+</html>
