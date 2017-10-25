@@ -35,6 +35,9 @@ public class Application {
             User ilia = new User("Ilia", "123456");
             ilia.setRole(rolesRepository.getOne(2L));
             userRepository.save(ilia);
+            User dasha = new User("Dasha", "123456");
+            dasha.setRole(rolesRepository.getOne(2L));
+            userRepository.save(dasha);
             User user = new User("User", "123456");
             user.setRole(rolesRepository.getOne(1L));
             userRepository.save(user);

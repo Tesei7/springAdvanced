@@ -24,7 +24,7 @@ public class UserController {
         return mav;
     }
 
-    @RequestMapping(value = "/greeting", method = RequestMethod.GET)
+    @RequestMapping(value = "/greetingMa", method = RequestMethod.GET)
     @ModelAttribute("name")
     public String getGreetingModelAttribute(@RequestParam(value = "name", required = false, defaultValue = "World") String name) {
         return "dearest " + name + "!!";
