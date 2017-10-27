@@ -18,7 +18,9 @@ public class HelloController {
         if (principal != null) {
             model.addAttribute("isIlia", principal.getName().equals("Ilia"));
         }
-        model.addAttribute("sum", calculationService.calculate(2, 2));
+        if (principal != null && !principal.getName().equals("User")) {
+            model.addAttribute("sum", calculationService.calculate(2, 2));
+        }
         return "hello";
     }
 }

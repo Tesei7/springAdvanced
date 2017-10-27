@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class CalculationService {
 
-    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PreAuthorize("hasRole('ADMIN')")
     public Integer calculate(Integer val1, Integer val2) {
         return val1 + val2;
     }

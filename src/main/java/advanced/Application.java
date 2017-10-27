@@ -11,9 +11,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 
 @SpringBootApplication
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class Application {
     private static final Logger log = LoggerFactory.getLogger(Application.class);
 
@@ -39,6 +40,9 @@ public class Application {
             dasha.setRole(rolesRepository.getOne(2L));
             userRepository.save(dasha);
             User user = new User("User", "123456");
+            user.setRole(rolesRepository.getOne(1L));
+            userRepository.save(user);
+            user = new User("User2", "123456");
             user.setRole(rolesRepository.getOne(1L));
             userRepository.save(user);
 
